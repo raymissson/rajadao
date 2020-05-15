@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 import axios from 'axios';
-import logoImg from '../../assets/previsao.png';
+import logoImg from '../../assets/lgbt.png';
 
 export default function Tempo(){
     // usuário aprovar o uso da location
@@ -47,22 +47,36 @@ export default function Tempo(){
       <div className="tempo-container">
         <div className="content">
             <section>
-                <img src={logoImg} alt="Lojas Bemol" />
+              <h1>
+                Previsão do Tempo
+                <img src="https://img.icons8.com/clouds/100/000000/sun.png"/>
+              </h1>
             </section>
-            <ul>
-            <li>
-              <img src="https://img.icons8.com/dotty/80/000000/temperature.png"/>
-              Temperatura atual: {weather['main']['temp']}</li>
-            <li>
-              <img src="https://img.icons8.com/office/40/000000/temperature.png"/>
-              Temperatura máxima: {weather['main']['temp_max']}</li>
-            <li>
-              <img src="https://img.icons8.com/ultraviolet/40/000000/temperature.png"/>
-              Temperatura mínima: {weather['main']['temp_min']}</li>
-            <li>Pressão: {weather['main']['pressure']}</li>
-            <li>Umidade: {weather['main']['humidity']}</li>
-            <li>Local: {weather['name']}</li>
-            </ul>
+            <section>
+              <h3>
+                {weather['name']}
+                <img src="https://img.icons8.com/clouds/100/000000/map-marker.png" width="60px" height="60px"/>
+              </h3>
+              <br />
+              <p>
+                Temperatura atual: {weather['main']['temp']}°C
+                <img src="https://img.icons8.com/dotty/80/000000/temperature.png" width="40px" height="40px"/>
+              </p>
+              <br />
+              <p>
+                Temperatura máxima: {weather['main']['temp_max']}°C
+                <img src="https://img.icons8.com/office/40/000000/temperature.png"/>
+              </p>
+              <br />
+              <p>
+                Temperatura mínima: {weather['main']['temp_min']}°C
+                <img src="https://img.icons8.com/ultraviolet/40/000000/temperature.png"/>
+              </p>
+              <br /><br />
+              <p>
+                Umidade: {weather['main']['humidity']}%
+              </p>
+            </section>
         </div>
       </div>
     );
